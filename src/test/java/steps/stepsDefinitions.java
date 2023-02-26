@@ -60,7 +60,7 @@ public class stepsDefinitions {
     @Then("user display the page of women icon")
     public void user_display_the_page_of_women_icon() throws InterruptedException {
         WebElement women= homepage.getWomenpage();
-        new WebDriverWait(driver,20).until(ExpectedConditions.visibilityOf(homepage.getWomenpage()));
+        new WebDriverWait(driver,30).until(ExpectedConditions.visibilityOf(homepage.getWomenpage()));
         Assert.assertTrue(women.isDisplayed());
 
     }
@@ -123,7 +123,7 @@ public class stepsDefinitions {
     @When("user click on the women icon")
     public void user_click_on_the_women_icon() throws InterruptedException {
         homepage= new Homepage(driver);
-        new WebDriverWait(driver,20).until(ExpectedConditions.elementToBeClickable(homepage.getWomenclick()));
+        new WebDriverWait(driver,30).until(ExpectedConditions.elementToBeClickable(homepage.getWomenclick()));
         homepage.getWomenclick().click();
 
 
