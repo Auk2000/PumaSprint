@@ -212,6 +212,7 @@ public class stepsDefinitions {
     @And("user able to select the size of the shoes")
     public void user_able_to_select_the_size_of_the_shoes() {
         //size
+        new WebDriverWait(driver,20).until(ExpectedConditions.elementToBeClickable(homepage.getFilterb()));
         homepage.getFilterb().click();
         homepage.getSize().click();
         homepage.getClose1().click();
