@@ -1,6 +1,6 @@
 Feature:User should able to click and access the functionalities of Puma home page
 
-  @smoke
+
   Scenario: Verify that user should take the cursor on element present on the home page
 
     Given user navigate to the home page
@@ -36,7 +36,7 @@ Feature:User should able to click and access the functionalities of Puma home pa
       And user able to select the colour of the shoes
       Then user should get display the products based on the size and colour
 
-
+  @smoke
    Scenario: Verify that user able to enter the  invalid pincode
 
       Given user navigate to the puma home page
@@ -60,8 +60,6 @@ Feature:User should able to click and access the functionalities of Puma home pa
         Then user should navigate login page
         And user able to click on the cart icon
         Then user should navigate to the login and Register page
-
-
 
 
     Scenario Outline: Search

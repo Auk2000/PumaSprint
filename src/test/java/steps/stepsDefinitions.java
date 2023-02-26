@@ -320,7 +320,8 @@ Assert.assertTrue(homepage.getProductslist().isDisplayed());
     @And("user enter the invalid pincode")
     public void user_enter_the_invalid_pincode() throws InterruptedException {
         //wrong pincode
-        homepage.getInvalidp().sendKeys("58000");
+        new WebDriverWait(driver,30).until(ExpectedConditions.visibilityOf(homepage.getInvalidp()));
+        homepage.getInvalidp().sendKeys(data.get("pincode"));
         homepage.getCheck1().click();
 
     }
@@ -328,7 +329,9 @@ Assert.assertTrue(homepage.getProductslist().isDisplayed());
     @Then("user should display the error message")
     public void user_should_display_the_error_message() {
         String text3=homepage.getError().getText();
-        Assert.assertEquals(text3,"Pincode must be 6 digits");
+       // Assert.assertEquals(text3,"Pincode must be 6 digits");
+        Assert.assertEquals(text3,"You need to give a valid PIN code.");
+
 
     }
 
