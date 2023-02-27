@@ -54,7 +54,7 @@ public class stepsDefinitions {
     public void user_move_cursor_on_women_icon() {
         action=new Actions(driver);
         homepage= new Homepage(driver);
-        new WebDriverWait(driver,40).until(ExpectedConditions.visibilityOf(homepage.getWomenAction()));
+        new WebDriverWait(driver,60).until(ExpectedConditions.elementToBeClickable(homepage.getWomenAction()));
         action.moveToElement(homepage.getWomenAction()).build().perform();
     }
 //user display the page of women icon
@@ -92,6 +92,7 @@ public class stepsDefinitions {
         homepage.getGetProduct().click();
         Thread.sleep(4000);
         homepage.getCapsclick().click();
+        Thread.sleep(4000);
         homepage.getBackclick().click();
         new WebDriverWait(driver,20).until(ExpectedConditions.elementToBeClickable(homepage.getGender()));
         //gender
@@ -105,7 +106,7 @@ public class stepsDefinitions {
     //user should display the product list page
     @Then("user should display the product list page")
     public void user_should_display_the_product_list_page() {
-        new WebDriverWait(driver,20).until(ExpectedConditions.visibilityOf(homepage.getResultdisplay1()));
+        new WebDriverWait(driver,40).until(ExpectedConditions.visibilityOf(homepage.getResultdisplay1()));
         WebElement products=homepage.getResultdisplay1();
         Assert.assertTrue(products.isDisplayed());
     }
