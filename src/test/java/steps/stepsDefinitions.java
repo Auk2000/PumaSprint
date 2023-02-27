@@ -54,6 +54,7 @@ public class stepsDefinitions {
     public void user_move_cursor_on_women_icon() {
         action=new Actions(driver);
         homepage= new Homepage(driver);
+        new WebDriverWait(driver,40).until(ExpectedConditions.visibilityOf(homepage.getWomenAction()));
         action.moveToElement(homepage.getWomenAction()).build().perform();
     }
 //user display the page of women icon
